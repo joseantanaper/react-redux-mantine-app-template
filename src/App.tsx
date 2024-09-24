@@ -1,67 +1,93 @@
-import "./App.css"
-import { Counter } from "./features/counter/Counter"
-import { Quotes } from "./features/quotes/Quotes"
-import logo from "./logo.svg"
+import React from "react"
+import {
+  AppShell,
+  Group,
+  Box,
+  Burger,
+  Skeleton,
+  Container,
+} from "@mantine/core"
+import { useDisclosure } from "@mantine/hooks"
+import "@mantine/core/styles.css"
+import css from "./theme/App.module.css"
 
 const App = () => {
+  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure()
+  const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true)
+  const [asideOpened, { toggle: toggleAside }] = useDisclosure(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Quotes />
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://reselect.js.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Reselect
-          </a>
-        </span>
-      </header>
-    </div>
+    <AppShell
+      header={{ height: 60 }}
+      footer={{ height: 60 }}
+      navbar={{
+        width: 300,
+        breakpoint: "sm",
+        collapsed: {
+          mobile: !mobileOpened,
+          desktop: !desktopOpened,
+        },
+      }}
+      aside={{
+        width: 300,
+        breakpoint: "md",
+        collapsed: {
+          desktop: !asideOpened,
+          mobile: !asideOpened,
+        },
+      }}
+      // padding="md"
+    >
+      <AppShell.Header className={css.header}>
+        <Box className={css.boxStart}>
+          <Burger
+            opened={mobileOpened}
+            onClick={toggleMobile}
+            hiddenFrom="sm"
+            size="lg"
+            m="xs"
+          />
+          <Burger
+            opened={desktopOpened}
+            onClick={toggleDesktop}
+            size="lg"
+            m="xs"
+            visibleFrom="sm"
+          />
+        </Box>
+        <Box className={css.boxCenter} p="md">
+          Header
+        </Box>
+        <Box className={css.boxEnd}>
+          <Burger opened={asideOpened} size="lg" m="xs" onClick={toggleAside} />
+        </Box>
+      </AppShell.Header>
+      <AppShell.Navbar p="md">
+        Navbar
+        {Array(10)
+          .fill(0)
+          .map((_, index) => (
+            <Skeleton key={index} h={28} mt="md" animate={true} />
+          ))}
+      </AppShell.Navbar>
+      <AppShell.Main>
+        <Container fluid p="xl">
+          {Array(40)
+            .fill(0)
+            .map((_, index) => (
+              <Skeleton key={index} h={56} mb="md" animate={true} />
+            ))}
+        </Container>
+      </AppShell.Main>
+      <AppShell.Aside p="md">
+        Aside
+        {Array(10)
+          .fill(0)
+          .map((_, index) => (
+            <Skeleton key={index} h={28} mt="md" animate={true} />
+          ))}
+      </AppShell.Aside>
+      <AppShell.Footer p="md">Footer</AppShell.Footer>
+    </AppShell>
   )
 }
 
