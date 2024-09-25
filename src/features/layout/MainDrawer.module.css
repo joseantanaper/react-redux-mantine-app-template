@@ -1,0 +1,9 @@
+.drawer {
+  background: red !important;
+  border: 0px solid red;
+}
+
+.drawer > .mantine-Drawer-root {
+  background: red !important;
+  opacity: 1;
+}

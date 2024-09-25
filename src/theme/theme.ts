@@ -4,16 +4,23 @@ import {
   AppShellHeader,
   AppShell,
   AppShellMain,
+  AppShellAside,
+  AppShellFooter,
+  ModalBaseCloseButton,
 } from "@mantine/core"
+import { MantineRadiusValues } from "@mantine/core"
+
 const theme = createTheme({
   /** Put your mantine theme override here */
-  fontFamily: "Open Sans, sans-serif",
+  fontFamily: "'Fira Code', Open Sans, sans-serif",
   primaryColor: "pink",
   white: "pink",
 
   focusRing: "always",
   fontSmoothing: true,
   cursorType: "pointer",
+
+  defaultRadius: 0,
 
   components: {
     AppShell: AppShell.extend({
@@ -23,18 +30,26 @@ const theme = createTheme({
     }),
     AppShellHeader: AppShellHeader.extend({
       defaultProps: {
-        // withBorder: false,
+        px: "sm",
+      },
+    }),
+    AppShellFooter: AppShellFooter.extend({
+      defaultProps: {
+        px: "sm",
       },
     }),
     AppShellNavbar: AppShellNavbar.extend({
       defaultProps: {
-        // withBorder: false,
+        p: "xl",
+      },
+    }),
+    AppShellAside: AppShellAside.extend({
+      defaultProps: {
+        p: "xl",
       },
     }),
     AppShellMain: AppShellMain.extend({
-      defaultProps: {
-        // bg: "pink",
-      },
+      defaultProps: {},
     }),
   },
 })

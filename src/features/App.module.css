@@ -1,0 +1,41 @@
+:root {
+  /* overflow-y: scroll !important; */
+}
+
+/* :root {
+  overflow-x: hidden;
+  overflow-y: scroll !important;
+}
+body[data-scroll-locked="1"] {
+} */
+/* 
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: yellow;
+  height: 100px;
+}
+::-webkit-scrollbar-track {
+  background: red;
+} */
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.mantine-AppShell-root {
+  background: red !important;
+}
