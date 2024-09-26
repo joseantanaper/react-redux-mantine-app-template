@@ -8,6 +8,7 @@ import {
   Burger,
   Skeleton,
   Container,
+  ScrollArea,
 } from "@mantine/core"
 import MainHeader from "./layout/MainHeader"
 import { useDisclosure } from "@mantine/hooks"
@@ -15,7 +16,6 @@ import "@mantine/core/styles.css"
 import css from "./App.module.css"
 import MainNavbar from "./layout/MainNavbar"
 import MainFooter from "./layout/MainFooter"
-import MainDrawer from "./layout/MainDrawer"
 import MainAside from "./layout/MainAside"
 import MainSkeleton from "./layout/MainSkeleton"
 
@@ -57,9 +57,11 @@ const App = () => {
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Container fluid pb={40}>
-          <MainSkeleton count={150} />
-        </Container>
+        <ScrollArea h="100%">
+          <Container fluid pb={40}>
+            <MainSkeleton count={150} />
+          </Container>
+        </ScrollArea>
       </AppShell.Main>
 
       <AppShell.Aside visibleFrom="lg">

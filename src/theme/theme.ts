@@ -7,20 +7,24 @@ import {
   AppShellAside,
   AppShellFooter,
   ModalBaseCloseButton,
+  Drawer,
+  CloseButton,
+  Burger,
+  Badge,
 } from "@mantine/core"
 import { MantineRadiusValues } from "@mantine/core"
 
 const theme = createTheme({
   /** Put your mantine theme override here */
-  fontFamily: "'Fira Code', Open Sans, sans-serif",
-  primaryColor: "pink",
-  white: "pink",
+  fontFamily: "'Segoe UI Light', Open Sans, sans-serif",
+  primaryColor: "red",
+  white: "#eee",
 
-  focusRing: "always",
+  // focusRing: "always",
   fontSmoothing: true,
   cursorType: "pointer",
 
-  defaultRadius: 0,
+  defaultRadius: 2,
 
   components: {
     AppShell: AppShell.extend({
@@ -40,16 +44,47 @@ const theme = createTheme({
     }),
     AppShellNavbar: AppShellNavbar.extend({
       defaultProps: {
-        p: "xl",
+        p: "md",
       },
     }),
     AppShellAside: AppShellAside.extend({
       defaultProps: {
-        p: "xl",
+        p: "md",
       },
     }),
     AppShellMain: AppShellMain.extend({
       defaultProps: {},
+    }),
+    Drawer: Drawer.extend({
+      defaultProps: {
+        bg: "red",
+        lockScroll: false,
+        // offset: 8,
+        radius: 2,
+        position: "right",
+        // padding: "xl",
+        overlayProps: {
+          backgroundOpacity: 0.6,
+          blur: 4,
+        },
+      },
+    }),
+    CloseButton: CloseButton.extend({
+      defaultProps: {
+        size: "lg",
+      },
+    }),
+    Burger: Burger.extend({
+      defaultProps: {
+        lineSize: 4,
+        color: "red",
+      },
+    }),
+    Badge: Badge.extend({
+      defaultProps: {
+        size: "md",
+        color: "blue",
+      },
     }),
   },
 })
