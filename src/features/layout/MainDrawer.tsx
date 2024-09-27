@@ -18,7 +18,6 @@ const MainDrawer = ({ status, toggler }: any) => {
         <MainSkeleton />
       </Drawer>
       <Avatar
-        component="a"
         href="#"
         onClick={toggler}
         className={css.avatar}

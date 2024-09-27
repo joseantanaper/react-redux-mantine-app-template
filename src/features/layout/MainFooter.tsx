@@ -1,13 +1,15 @@
 import React from "react"
-import { Grid, Group, Pagination } from "@mantine/core"
+import { Container, Grid, Group, Pagination } from "@mantine/core"
 
 const MainFooter = () => {
   return (
-    <>
-      <Group miw={300}>Left Area</Group>
+    <Group wrap="nowrap">
+      <Group miw={300} wrap="nowrap">
+        Left Area
+      </Group>
       <Group justify="center" w="100%">
         <Pagination.Root total={100}>
-          <Group gap={5} justify="center">
+          <Group gap={5} justify="center" wrap="nowrap">
             <Pagination.First />
             <Pagination.Previous />
             <Pagination.Items />
@@ -16,10 +18,10 @@ const MainFooter = () => {
           </Group>
         </Pagination.Root>
       </Group>
-      <Group miw={300} justify="flex-end">
+      <Group miw={300} justify="flex-end" wrap="nowrap">
         Right Area
       </Group>
-    </>
+    </Group>
   )
 }
 
