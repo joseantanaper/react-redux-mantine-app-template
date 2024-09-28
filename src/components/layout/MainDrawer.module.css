@@ -1,0 +1,6 @@
+.avatar {
+  cursor: pointer;
+}
+.avatar:hover {
+  transform: scale(1.1);
+}

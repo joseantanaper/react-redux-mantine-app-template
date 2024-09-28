@@ -21,17 +21,22 @@ import {
 import { MantineRadiusValues } from "@mantine/core"
 import { IconThermometer } from "@tabler/icons-react"
 
+import css from "./theme.module.css"
+
 const theme = createTheme({
   /** Put your mantine theme override here */
-  fontFamily: "'Segoe UI Light', Open Sans, sans-serif",
-  primaryColor: "blue",
+  fontFamily: "Lato, Montserrat, Open Sans, sans-serif",
+  fontFamilyMonospace: "Roboto Mono",
+  primaryColor: "pink",
   white: "#eee",
 
-  // focusRing: "always",
+  activeClassName: css.active,
+
+  focusRing: "auto",
   fontSmoothing: true,
   cursorType: "pointer",
 
-  defaultRadius: 2,
+  defaultRadius: 3,
 
   components: {
     AppShell: AppShell.extend({
@@ -41,34 +46,38 @@ const theme = createTheme({
     }),
     AppShellHeader: AppShellHeader.extend({
       defaultProps: {
-        px: 4,
+        px: "xs",
       },
     }),
     AppShellFooter: AppShellFooter.extend({
       defaultProps: {
-        px: "xs",
+        px: "xl",
       },
     }),
     AppShellNavbar: AppShellNavbar.extend({
       defaultProps: {
-        p: "xl",
+        className: css.navbar,
+        p: "sm",
+        pl: "md",
       },
     }),
     AppShellAside: AppShellAside.extend({
       defaultProps: {
-        p: "xl",
+        className: css.aside,
+        p: "sm",
+        pr: "md",
       },
     }),
     AppShellMain: AppShellMain.extend({
-      defaultProps: {},
+      defaultProps: {
+        m: "md",
+      },
     }),
     Drawer: Drawer.extend({
       defaultProps: {
         padding: "xl",
-        bg: "red",
         lockScroll: false,
         // offset: 8,
-        radius: 2,
         position: "right",
         overlayProps: {
           backgroundOpacity: 0.6,
@@ -78,7 +87,7 @@ const theme = createTheme({
     }),
     CloseButton: CloseButton.extend({
       defaultProps: {
-        size: "lg",
+        size: "xl",
       },
     }),
     Burger: Burger.extend({
@@ -95,12 +104,12 @@ const theme = createTheme({
     }),
     Button: Button.extend({
       defaultProps: {
+        className: css.btn,
         // bg: "red",
         miw: 50,
         px: "xs",
         mih: 48,
         variant: "gradient",
-        radius: "md",
       },
     }),
     Avatar: Avatar.extend({

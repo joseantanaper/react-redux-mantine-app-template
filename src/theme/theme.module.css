@@ -1,0 +1,27 @@
+.active {
+  transition: transform 50ms ease-in-out;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.btn:hover {
+  & > span {
+    /* filter: drop-shadow(0 0 1px rgba(255 255 255 / 0.4)); */
+    transform: scale(1.1);
+  }
+}
+
+.focus {
+  border: 5px solid red;
+}
+
+.navbar {
+  box-shadow: 8px 0 12px -6px light-dark(rgba(200 200 200 / 0.8), rgba(0 0 0 /
+          0.3));
+}
+.aside {
+  box-shadow: -8px 0 12px -6px light-dark(rgba(200 200 200 / 0.8), rgba(0 0 0 /
+          0.3));
+}
