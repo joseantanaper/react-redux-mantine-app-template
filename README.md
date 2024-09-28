@@ -1,3 +1,7 @@
+# react-redux-mantine-app-template
+
+https://joseantanaper.github.io/react-redux-mantine-app-template/
+
 ```sh
 npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
 ```
