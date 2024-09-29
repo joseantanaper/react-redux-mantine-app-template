@@ -17,18 +17,35 @@ import {
   CheckIconProps,
   Avatar,
   ThemeIcon,
+  getThemeColor,
+  Divider,
 } from "@mantine/core"
-import { MantineRadiusValues } from "@mantine/core"
+import { MantineRadiusValues, useMantineTheme } from "@mantine/core"
 import { IconThermometer } from "@tabler/icons-react"
 
 import css from "./theme.module.css"
 
 const theme = createTheme({
+  colors: {
+    "bright-pink": [
+      "#F0BBDD",
+      "#ED9BCF",
+      "#EC7CC3",
+      "#ED5DB8",
+      "#F13EAF",
+      "#F71FA7",
+      "#FF00A1",
+      "#E00890",
+      "#C50E82",
+      "#AD1374",
+    ],
+  },
+
   /** Put your mantine theme override here */
   fontFamily: "Lato, Montserrat, Open Sans, sans-serif",
   fontFamilyMonospace: "Roboto Mono",
-  primaryColor: "pink",
-  white: "#eee",
+  primaryColor: "green",
+  // white: "#eee",
 
   activeClassName: css.active,
 
@@ -46,11 +63,13 @@ const theme = createTheme({
     }),
     AppShellHeader: AppShellHeader.extend({
       defaultProps: {
+        className: css.header,
         px: "xs",
       },
     }),
     AppShellFooter: AppShellFooter.extend({
       defaultProps: {
+        className: css.footer,
         px: "xl",
       },
     }),
@@ -58,14 +77,14 @@ const theme = createTheme({
       defaultProps: {
         className: css.navbar,
         p: "sm",
-        pl: "md",
+        // pl: "xl",
       },
     }),
     AppShellAside: AppShellAside.extend({
       defaultProps: {
         className: css.aside,
         p: "sm",
-        pr: "md",
+        // pr: "xl",
       },
     }),
     AppShellMain: AppShellMain.extend({
@@ -75,7 +94,7 @@ const theme = createTheme({
     }),
     Drawer: Drawer.extend({
       defaultProps: {
-        padding: "xl",
+        padding: "sm",
         lockScroll: false,
         // offset: 8,
         position: "right",
@@ -94,6 +113,7 @@ const theme = createTheme({
       defaultProps: {
         lineSize: 4,
         color: "red",
+        p: 0,
       },
     }),
     Badge: Badge.extend({
@@ -107,9 +127,9 @@ const theme = createTheme({
         className: css.btn,
         // bg: "red",
         miw: 50,
-        px: "xs",
+        p: 0,
         mih: 48,
-        variant: "gradient",
+        variant: "subtle",
       },
     }),
     Avatar: Avatar.extend({
@@ -122,6 +142,12 @@ const theme = createTheme({
       defaultProps: {
         color: "black",
         opacity: 1,
+      },
+    }),
+    Divider: Divider.extend({
+      defaultProps: {
+        m: "md",
+        opacity: 0.6,
       },
     }),
   },

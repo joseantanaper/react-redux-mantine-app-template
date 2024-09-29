@@ -13,7 +13,6 @@ import {
 import MainHeader from "./MainHeader"
 import { useDisclosure } from "@mantine/hooks"
 import "@mantine/core/styles.css"
-import css from "./App.module.css"
 import MainNavbar from "./MainNavbar"
 import MainFooter from "./MainFooter"
 import MainAside from "./MainAside"
@@ -46,7 +45,7 @@ const App = () => {
         },
       }}
     >
-      <AppShell.Header className={css.header}>
+      <AppShell.Header>
         <MainHeader
           status={[desktopOpened, mobileOpened, asideOpened, drawerOpened]}
           togglers={[toggleDesktop, toggleMobile, toggleAside, toggleDrawer]}
@@ -68,7 +67,7 @@ const App = () => {
         <MainAside />
       </AppShell.Aside>
 
-      <AppShell.Footer className={css.footer}>
+      <AppShell.Footer>
         <MainFooter />
       </AppShell.Footer>
     </AppShell>
