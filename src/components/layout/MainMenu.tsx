@@ -1,4 +1,5 @@
 import { Badge, Box, Divider, NavLink, Title } from "@mantine/core"
+import { NavLink as RouterNavLink } from "react-router-dom"
 import {
   IconActivity,
   IconChevronRight,
@@ -14,6 +15,8 @@ const MainMenu = ({ title }: any) => {
       <Title order={4} p="sm">
         {title}
       </Title>
+      <Divider m="sm" size="xs" />
+      <RouterNavLink to="/about">Ahahaha</RouterNavLink>
       <Divider m="sm" size="xs" />
       <NavLink
         href="#required-for-focus"

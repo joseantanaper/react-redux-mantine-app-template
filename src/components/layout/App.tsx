@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   AppShell,
   Grid,
@@ -9,20 +9,20 @@ import {
   Skeleton,
   Container,
   ScrollArea,
-} from "@mantine/core"
-import MainHeader from "./MainHeader"
-import { useDisclosure } from "@mantine/hooks"
-import "@mantine/core/styles.css"
-import MainNavbar from "./MainNavbar"
-import MainFooter from "./MainFooter"
-import MainAside from "./MainAside"
-import MainSkeleton from "./MainSkeleton"
+} from "@mantine/core";
+import MainHeader from "./MainHeader";
+import { useDisclosure } from "@mantine/hooks";
+import "@mantine/core/styles.css";
+import MainNavbar from "./MainNavbar";
+import MainFooter from "./MainFooter";
+import MainAside from "./MainAside";
+import MainSkeleton from "./MainSkeleton";
 
 const App = () => {
-  const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true)
-  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure(false)
-  const [asideOpened, { toggle: toggleAside }] = useDisclosure(true)
-  const [drawerOpened, { toggle: toggleDrawer }] = useDisclosure(false)
+  const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
+  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure(false);
+  const [asideOpened, { toggle: toggleAside }] = useDisclosure(true);
+  const [drawerOpened, { toggle: toggleDrawer }] = useDisclosure(false);
 
   return (
     <AppShell
@@ -71,7 +71,7 @@ const App = () => {
         <MainFooter />
       </AppShell.Footer>
     </AppShell>
-  )
-}
+  );
+};
 
-export default App
+export default App;

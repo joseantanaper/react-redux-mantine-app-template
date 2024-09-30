@@ -89,7 +89,7 @@ const theme = createTheme({
     }),
     AppShellMain: AppShellMain.extend({
       defaultProps: {
-        m: "md",
+        className: css.main,
       },
     }),
     Drawer: Drawer.extend({

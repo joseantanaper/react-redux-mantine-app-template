@@ -1,4 +1,4 @@
 .clock {
-  font-family: "Roboto Mono";
+  font-family: var(--mantine-font-family-monospace);
   font-weight: 200;
 }

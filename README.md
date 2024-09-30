@@ -27,11 +27,17 @@ module.exports = {
       },
     },
   },
-}
+};
 ```
 
 Import styles to App.tsx
 
 ```ts
-import "@mantine/core/styles.css"
+import "@mantine/core/styles.css";
+```
+
+## React-Router
+
+```sh
+npm install react-router-dom
 ```
