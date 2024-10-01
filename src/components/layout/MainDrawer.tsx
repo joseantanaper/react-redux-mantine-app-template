@@ -9,7 +9,6 @@ const MainDrawer = ({ status, toggler }: any) => {
   return (
     <>
       <Drawer
-        zIndex={4000}
         opened={status}
         onClose={toggler}
         title={
@@ -23,7 +22,7 @@ const MainDrawer = ({ status, toggler }: any) => {
         }
       >
         <MainMenu title="Config" />
-        <MainSkeleton />
+        {/* <MainSkeleton /> */}
       </Drawer>
       <Avatar
         onClick={toggler}

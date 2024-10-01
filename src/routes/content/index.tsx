@@ -4,7 +4,7 @@ import MainSkeleton from "../../components/layout/MainSkeleton"
 const Content = () => {
   return (
     <>
-      About!
+      Content
       <MainSkeleton count={40} />
     </>
   )

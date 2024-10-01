@@ -8,6 +8,7 @@ import theme from "./theme/theme"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Root from "./routes/root"
 import About from "./routes/about"
+import Content from "./routes/content"
 
 const container = document.getElementById("root")
 
@@ -20,7 +21,12 @@ const router = createBrowserRouter(
         {
           index: true,
           path: "/",
-          element: <About />,
+          element: <Content />,
+        },
+        {
+          index: true,
+          path: "/content",
+          element: <Content />,
         },
         {
           index: true,

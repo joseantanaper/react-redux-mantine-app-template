@@ -10,6 +10,8 @@ import {
   Text,
   SegmentedControl,
   VisuallyHidden,
+  Flex,
+  Container,
 } from "@mantine/core"
 import MainDrawer from "./MainDrawer"
 import {
@@ -32,7 +34,7 @@ import {
 } from "@tabler/icons-react"
 import Clock from "./widget/Clock"
 
-const MainHeader = ({ status, togglers }: any) => {
+const MainHeader = ({ title, subtitle, status, togglers }: any) => {
   const { colorScheme, setColorScheme } = useMantineColorScheme()
   const computedColorScheme = useComputedColorScheme("light")
   const theme = useMantineTheme()
@@ -69,61 +71,29 @@ const MainHeader = ({ status, togglers }: any) => {
 
   return (
     <>
-      <Group w="20%" miw="60" wrap="nowrap">
-        <Button visibleFrom="sm" onClick={togglers[0]}>
-          {!status[0] && <IconLayoutSidebar size={sizes.togglerIcon} />}
-          {status[0] && <IconLayoutSidebarFilled size={sizes.togglerIcon} />}
-        </Button>
-        <Button hiddenFrom="sm" onClick={togglers[1]}>
-          {!status[1] && <IconLayoutSidebar size={sizes.togglerIcon} />}
-          {status[1] && <IconLayoutSidebarFilled size={sizes.togglerIcon} />}
-        </Button>
-        <Box visibleFrom="xs">
-          <Title order={3}>Header</Title>
-        </Box>
-      </Group>
-
-      <Group w="80%" justify="flex-end" wrap="nowrap">
-        <HeaderBadges />
-        <Divider orientation="vertical" visibleFrom="lg" />
-        <Clock />
-        <Divider orientation="vertical" visibleFrom="xl" />
-        <SegmentedControl
-          visibleFrom="xl"
-          withItemsBorders={false}
-          color={theme.primaryColor}
-          data={[
-            {
-              value: "light",
-              label: (
-                <Group wrap="nowrap">
-                  <IconSun />
-                  <VisuallyHidden>Light</VisuallyHidden>
-                </Group>
-              ),
-            },
-            {
-              value: "dark",
-              label: (
-                <Group wrap="nowrap">
-                  <IconMoon />
-                  <VisuallyHidden>Dark</VisuallyHidden>
-                </Group>
-              ),
-            },
-            {
-              value: "auto",
-              label: (
-                <Group wrap="nowrap">
-                  <IconContrast />
-                  <VisuallyHidden>Auto</VisuallyHidden>
-                </Group>
-              ),
-            },
-          ]}
-        />
-
-        <Group visibleFrom="xl">
+      <Flex w="100%" justify={"space-between"}>
+        <Group>
+          <Button visibleFrom="sm" onClick={togglers[0]}>
+            {!status[0] && <IconLayoutSidebar size={sizes.togglerIcon} />}
+            {status[0] && <IconLayoutSidebarFilled size={sizes.togglerIcon} />}
+          </Button>
+          <Button hiddenFrom="sm" onClick={togglers[1]}>
+            {!status[1] && <IconLayoutSidebar size={sizes.togglerIcon} />}
+            {status[1] && <IconLayoutSidebarFilled size={sizes.togglerIcon} />}
+          </Button>
+          <Title order={2}>{title}</Title>
+          <Title order={3} fw={300} opacity={0.6} textWrap="nowrap">
+            {subtitle}
+          </Title>
+        </Group>
+        <Group visibleFrom="md" justify="center">
+          Middle Area of a Pixel Perfect Layout
+        </Group>
+        <Group justify="flex-end" mr="md">
+          <Group visibleFrom="sm" justify="center">
+            <HeaderBadges />
+            <Clock />
+          </Group>
           <Button onClick={toggleColorScheme}>
             {computedColorScheme !== "light" && (
               <IconSun size={sizes.btnIcon} />
@@ -136,9 +106,9 @@ const MainHeader = ({ status, togglers }: any) => {
             {!status[2] && <IconLayoutSidebarRight size={sizes.btnIcon} />}
             {status[2] && <IconLayoutSidebarRightFilled size={sizes.btnIcon} />}
           </Button>
+          <MainDrawer status={status[3]} toggler={togglers[3]} />
         </Group>
-        <MainDrawer status={status[3]} toggler={togglers[3]} />
-      </Group>
+      </Flex>
     </>
   )
 }

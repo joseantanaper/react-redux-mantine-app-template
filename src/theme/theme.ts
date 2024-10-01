@@ -19,6 +19,8 @@ import {
   ThemeIcon,
   getThemeColor,
   Divider,
+  Flex,
+  Group,
 } from "@mantine/core"
 import { MantineRadiusValues, useMantineTheme } from "@mantine/core"
 import { IconThermometer } from "@tabler/icons-react"
@@ -44,7 +46,7 @@ const theme = createTheme({
   /** Put your mantine theme override here */
   fontFamily: "Lato, Montserrat, Open Sans, sans-serif",
   fontFamilyMonospace: "Roboto Mono",
-  primaryColor: "green",
+  primaryColor: "bright-pink",
   // white: "#eee",
 
   activeClassName: css.active,
@@ -65,26 +67,29 @@ const theme = createTheme({
       defaultProps: {
         className: css.header,
         px: "xs",
+        zIndex: 1024,
       },
     }),
     AppShellFooter: AppShellFooter.extend({
       defaultProps: {
         className: css.footer,
         px: "xl",
+        zIndex: 1024,
       },
     }),
     AppShellNavbar: AppShellNavbar.extend({
       defaultProps: {
         className: css.navbar,
-        p: "sm",
-        // pl: "xl",
+        // px: "sm",
+        zIndex: 2048,
       },
     }),
     AppShellAside: AppShellAside.extend({
       defaultProps: {
         className: css.aside,
-        p: "sm",
+        // p: "sm",
         // pr: "xl",
+        zIndex: 2048,
       },
     }),
     AppShellMain: AppShellMain.extend({
@@ -94,12 +99,13 @@ const theme = createTheme({
     }),
     Drawer: Drawer.extend({
       defaultProps: {
-        padding: "sm",
         lockScroll: false,
-        // offset: 8,
+        offset: 4,
         position: "right",
+        radius: "md",
+        zIndex: 2050,
         overlayProps: {
-          backgroundOpacity: 0.6,
+          backgroundOpacity: 0.4,
           blur: 4,
         },
       },
@@ -135,19 +141,31 @@ const theme = createTheme({
     Avatar: Avatar.extend({
       defaultProps: {
         size: "md",
-        mx: "lg",
       },
     }),
-    ActionIcon: ActionIcon.extend({
-      defaultProps: {
-        color: "black",
-        opacity: 1,
-      },
-    }),
+    // ActionIcon: ActionIcon.extend({
+    //   defaultProps: {
+    //     color: "black",
+    //     opacity: 1,
+    //   },
+    // }),
     Divider: Divider.extend({
       defaultProps: {
-        m: "md",
-        opacity: 0.6,
+        m: "sm",
+        size: "xs",
+        opacity: 0.2,
+      },
+    }),
+    Group: Group.extend({
+      defaultProps: {
+        wrap: "nowrap",
+      },
+    }),
+    Flex: Flex.extend({
+      defaultProps: {
+        wrap: "nowrap",
+        gap: "xs",
+        align: "center",
       },
     }),
   },

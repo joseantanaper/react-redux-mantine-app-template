@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Grid, Divider, Group, Pagination } from "@mantine/core";
+import React from "react"
+import { Container, Grid, Divider, Group, Pagination } from "@mantine/core"
 
 const MainFooter = () => {
   return (
@@ -33,7 +33,7 @@ const MainFooter = () => {
         Right Area
       </Group>
     </>
-  );
-};
+  )
+}
 
-export default MainFooter;
+export default MainFooter
