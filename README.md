@@ -27,17 +27,29 @@ module.exports = {
       },
     },
   },
-};
+}
 ```
 
 Import styles to App.tsx
 
 ```ts
-import "@mantine/core/styles.css";
+import "@mantine/core/styles.css"
+```
+
+## prettier
+
+```sh
+npx prettier . --write
 ```
 
 ## React-Router
 
 ```sh
 npm install react-router-dom
+```
+
+## Redux Persist
+
+```sh
+npm install redux-persist
 ```
