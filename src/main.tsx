@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Root from "./routes/root"
 import About from "./routes/about"
 import Content from "./routes/content"
+import Home from "./routes/home"
 
 const container = document.getElementById("root")
 
@@ -21,7 +22,12 @@ const router = createBrowserRouter(
         {
           index: true,
           path: "/",
-          element: <Content />,
+          element: <Home />,
+        },
+        {
+          index: true,
+          path: "/home",
+          element: <Home />,
         },
         {
           index: true,
@@ -36,7 +42,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: window.location.pathname },
+  { basename: "/react-redux-mantine-app-template" },
 )
 
 if (container) {
